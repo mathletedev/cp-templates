@@ -10,7 +10,7 @@ using namespace std;
 
 #define FOR(i, n) for (int i = 0; i < n; ++i)
 #define EACH(e, a) for (const auto &e: a)
-#define DEB(v) write("[ DEBUG ] ", #v, " | ", v, "\n")
+#define DEB(v) write("[ DEBUG ] ", #v, " => ", v)
 #define mp make_pair
 #define pb push_back
 #define PI 3.14159265358979323846
@@ -29,7 +29,7 @@ typedef pair<int, int> pii;
 template<typename T> void read(T &x) {
 	cin >> x;
 }
-template<typename F, typename... R> void read(F &f, R &...r) {
+template<typename F, typename ...R> void read(F &f, R &...r) {
 	read(f);
 	read(r...);
 }
@@ -49,7 +49,7 @@ template<typename F, typename ...R> void print(const F &f, const R &...r) {
 	write(f);
 	if (sizeof...(r)) write(" ");
 
-	write(r...);
+	print(r...);
 }
 
 void solve() {
@@ -64,11 +64,8 @@ int main() {
 	int t;
 	read(t);
 
-	while (t--) {
-		solve();
-
-		print();
-	}
+	while (t--) solve();
 
 	return 0;
 }
+
