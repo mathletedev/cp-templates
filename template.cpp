@@ -34,10 +34,10 @@ template<typename F, typename... R> void read(F &f, R &...r) {
 	read(r...);
 }
 
-template<typename T> void write(T &x) {
+template<typename T> void write(T x) {
 	cout << x;
 }
-template<typename F, typename... R> void write(const F &f, const R &...r) {
+template<typename F, typename ...R> void write(const F &f, const R &...r) {
 	write(f);
 	write(r...);
 }
@@ -45,7 +45,7 @@ template<typename F, typename... R> void write(const F &f, const R &...r) {
 void print() {
 	write("\n");
 }
-template<typename F, typename... R> void print(const F &f, const R &...r) {
+template<typename F, typename ...R> void print(const F &f, const R &...r) {
 	write(f);
 	if (sizeof...(r)) write(" ");
 
